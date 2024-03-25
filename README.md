@@ -51,5 +51,24 @@ Esta tabela contém informações sobre clientes no contexto de publicidade, inc
 | recno         | Número de registro do cliente.         |
 | cnpj_cpf      | CNPJ (Cadastro Nacional da Pessoa Jurídica) ou CPF (Cadastro de Pessoa Física) do cliente. |
 
+# Documentação da Tabela `dim_fornecedor_publi`
+
+Esta tabela contém informações sobre fornecedores no contexto de publicidade, incluindo detalhes como identificação, situação, nome, informações de contato e endereço.
+
+| Coluna            | Descrição                              |
+|-------------------|----------------------------------------|
+| cod_fornecedor    | Identificador único do fornecedor (Primary Key). |
+| nome              | Nome do fornecedor.                    |
+| situacao          | Situação do fornecedor (ativo, inativo, etc.). |
+| razao_soc         | Razão social do fornecedor (se aplicável). |
+| cgc               | CGC (Cadastro Geral de Contribuintes) do fornecedor. |
+| municipio         | Município do fornecedor.               |
+| estado            | Estado do fornecedor.                  |
+| cep               | CEP (Código de Endereçamento Postal) do fornecedor. |
+| tipo              | Tipo de fornecedor (pessoa física, pessoa jurídica, etc.). |
+| email             | Endereço de e-mail do fornecedor.      |
+| dtinclusao        | Data de inclusão do fornecedor no sistema.|
+| recno             | Número de registro do fornecedor.      |
+| cnpj_cpf          | CNPJ (Cadastro Nacional da Pessoa Jurídica) ou CPF (Cadastro de Pessoa Física) do fornecedor. |
 
 
