@@ -31,6 +31,25 @@ Esta tabela armazena informações sobre advertências, com detalhes sobre o in�
 3. **Documentação da API:** Escolha a opção de API e selecione "Epick Advertencia".
 4. **Explorar a API:** Selecione o processo "Envio de Advertência" e a atividade "Solicitação de Envio de Advertência".
 
+# Documentação da Tabela `dim_clientes_publi`
+
+Esta tabela contém informações sobre clientes no contexto de publicidade, incluindo detalhes como identificação, situação, nome, informações de contato e endereço.
+
+| Coluna        | Descrição                              |
+|---------------|----------------------------------------|
+| cod_cliente   | Identificador único do cliente (Primary Key). |
+| nome          | Nome do cliente.                       |
+| situacao      | Situação do cliente (ativo, inativo, etc.). |
+| razao_soc     | Razão social do cliente (se aplicável). |
+| cgc           | CGC (Cadastro Geral de Contribuintes) do cliente. |
+| municipio     | Município do cliente.                  |
+| estado        | Estado do cliente.                     |
+| cep           | CEP (Código de Endereçamento Postal) do cliente. |
+| tipo          | Tipo de cliente (pessoa física, pessoa jurídica, etc.). |
+| email         | Endereço de e-mail do cliente.         |
+| dtinclusao    | Data de inclusão do cliente no sistema.|
+| recno         | Número de registro do cliente.         |
+| cnpj_cpf      | CNPJ (Cadastro Nacional da Pessoa Jurídica) ou CPF (Cadastro de Pessoa Física) do cliente. |
 
 
 
