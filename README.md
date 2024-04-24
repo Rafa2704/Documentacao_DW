@@ -224,5 +224,49 @@ Este documento descreve o fluxo de férias em detalhes, incluindo informações 
 | aprovador_dp     | Aprovador de departamento.               |
 
 
+# Documentação das Contas a Receber do ERP Publi
+
+Este documento descreve as informações relacionadas às contas a receber no contexto do ERP Publi, incluindo detalhes sobre pedidos, clientes, fornecedores, produtos, serviços, faturas, entre outros.
+
+| Coluna           | Descrição                                       |
+|------------------|-------------------------------------------------|
+| pedido           | Número do pedido associado à conta a receber.   |
+| tipo             | Tipo de transação (ex: venda, serviço, etc.).    |
+| cod_client       | Código do cliente relacionado à transação.      |
+| cod_fornec       | Código do fornecedor relacionado à transação.   |
+| produto          | Produto associado à transação.                  |
+| titulo           | Título da transação.                            |
+| servico          | Serviço associado à transação.                  |
+| emissao          | Data de emissão da transação.                   |
+| valor            | Valor da transação.                             |
+| prazopagto       | Prazo de pagamento da transação.                |
+| descricao        | Descrição da transação.                         |
+| prazoentre       | Prazo entre transações.                         |
+| origem           | Origem da transação.                            |
+| fatura           | Número da fatura associada à transação.         |
+| tipofatura       | Tipo de fatura (ex: fatura, nota fiscal, etc.). |
+| opmanu           | Operação de manutenção.                         |
+| dtmanu           | Data de manutenção.                             |
+| usmanu           | Usuário responsável pela manutenção.            |
+| nf_fornece      | Nota fiscal fornecida.                          |
+| vencimento      | Data de vencimento da transação.                |
+| situacao        | Situação da transação.                          |
+| empresa         | Empresa relacionada à transação.                |
+| dtinclusao      | Data de inclusão da transação no sistema.      |
+| hrmanu          | Hora de manutenção.                             |
+| nf_numero       | Número da nota fiscal.                          |
+| nf_valor        | Valor da nota fiscal.                           |
+| nf_situaca      | Situação da nota fiscal.                        |
+| historico       | Histórico da transação.                         |
+| usinclusao      | Usuário responsável pela inclusão.              |
+| nf_serie        | Série da nota fiscal.                           |
+| nf_empresa      | Empresa relacionada à nota fiscal.              |
+| recno           | Número de registro da transação.                |
+| campanha        | Campanha relacionada à transação.               |
+| idfat           | ID da fatura.                                   |
+| cod_agenci      | Código da agência.                              |
+| nfe             | Nota fiscal eletrônica.                         |
+| orcx_recno      | Número de registro na caixa.                    |
+| documento_empresa | Documento da empresa relacionado à transação. |
 
 
