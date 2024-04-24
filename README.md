@@ -269,4 +269,111 @@ Este documento descreve as informações relacionadas às contas a receber no co
 | orcx_recno      | Número de registro na caixa.                    |
 | documento_empresa | Documento da empresa relacionado à transação. |
 
+# Documentação da Tabela `fato_faturamento`
+
+Esta tabela armazena informações relacionadas ao faturamento, incluindo detalhes sobre faturas, situação, clientes, produtos, impostos e outras informações associadas.
+
+| Coluna          | Descrição                                  |
+|-----------------|--------------------------------------------|
+| fatura          | Número da fatura.                         |
+| situacao        | Situação da fatura (ex: aberta, fechada). |
+| cad_sacado      | Cadastro do sacado.                       |
+| sacado          | Nome do sacado.                           |
+| pit             | PIT (Período de Apuração e Pagamento).    |
+| produto         | Produto associado à fatura.               |
+| emissao         | Data de emissão da fatura.                |
+| vencimento      | Data de vencimento da fatura.             |
+| subtipo         | Subtipo da fatura.                        |
+| iss_rf          | Valor do ISS retido na fonte.             |
+| irrf            | Valor do IRRF (Imposto de Renda Retido na Fonte). |
+| indicador       | Indicador.                                |
+| opmanu          | Operação de manutenção.                   |
+| dtmanu          | Data de manutenção.                       |
+| usmanu          | Usuário responsável pela manutenção.      |
+| darf            | DARF (Documento de Arrecadação de Receitas Federais). |
+| data_sit        | Data de situação.                         |
+| ctb_chave       | Chave contábil.                           |
+| ctb_estorn      | Estorno contábil.                         |
+| referencia      | Referência.                               |
+| ccusto          | Centro de custo.                          |
+| dtinclusao      | Data de inclusão.                         |
+| hrmanu          | Hora de manutenção.                       |
+| competenci      | Competência.                              |
+| tipo_doc        | Tipo de documento.                        |
+| documento       | Documento associado à fatura.            |
+| recibo          | Recibo.                                   |
+| cartacred       | Carta de crédito.                         |
+| icsll           | Valor do ICSLL.                           |
+| icofins         | Valor do COFINS.                          |
+| ipis            | Valor do PIS.                             |
+| usinclusao      | Usuário de inclusão.                      |
+| campanha        | Campanha.                                 |
+| iinss           | Valor do INSS.                            |
+| nfe             | Nota Fiscal Eletrônica.                   |
+| serie           | Série.                                    |
+| idfat           | ID da fatura.                             |
+| saac            | SAAC (Sistema de Arrecadação e Cobrança).|
+| lote            | Lote.                                     |
+| codativ         | Código de atividade.                      |
+| vernfe          | Versão da NF-e.                           |
+| spedfbcalc      | SPED Fiscal Base de Cálculo.              |
+| nferetorno     | Retorno da NF-e.                          |
+| iss_fm          | Valor do ISS.                             |
+| horanfe         | Hora da NF-e.                             |
+| sitrps          | Situação do RPS.                          |
+| xmlnfe          | XML da NF-e.                              |
+| cod_scp         | Código do SCP (Sistema de Controle de Pagamento). |
+| nferecibo       | Recibo da NF-e.                           |
+| t_reg_trib      | Tipo de registro tributário.              |
+| hrinclusao      | Hora de inclusão.                         |
+| codtribmun      | Código tributário municipal.              |
+| natop           | Natureza da operação.                     |
+| itservico       | Item de serviço.                          |
+| cnae            | CNAE (Classificação Nacional de Atividades Econômicas). |
+| sismanu         | Sistema de manutenção.                    |
+| cst             | Código de Situação Tributária.            |
+| ref_idfat       | Referência do ID da fatura.               |
+| nfe_gmt         | Horário de Greenwich da NF-e.             |
+| tiposervic      | Tipo de serviço.                          |
+| reinflote       | Lote do REINF (eSocial).                  |
+| reinfstatu      | Status do REINF (eSocial).                |
+| reinfproc       | Processo do REINF (eSocial).              |
+| reinftpev       | Tipo de evento do REINF (eSocial).        |
+| reinfidev       | Identificador do evento do REINF (eSocial). |
+| reinfhash       | Hash do REINF (eSocial).                  |
+| reinfrecib      | Recibo do REINF (eSocial).                |
+| reinferro       | Erro do REINF (eSocial).                  |
+| reinfcoder      | Código do erro do REINF (eSocial).        |
+| nfelink         | Link da NF-e.                             |
+| reinfxml        | XML do REINF (eSocial).                   |
+| cod_sacado      | Código do sacado.                         |
+| cod_client      | Código do cliente.                        |
+| tipo_rec        | Tipo de recibo.                           |
+| desconto        | Valor do desconto.                        |
+| controle        | Controle.                                 |
+| encargos        | Encargos.                                 |
+| empresa         | Empresa.                                  |
+| cofins          | Valor do COFINS.                          |
+| csll            | Valor da CSLL.                            |
+| imp_manual      | Imposto manual.                           |
+| inss            | Valor do INSS.                            |
+| recno           | Número de registro.                       |
+| datanfe         | Data da NF-e.                             |
+| codigo_ex       | Código EX.                                |
+| part_scp        | Part SCP (Sistema de Controle de Pagamento). |
+| cod_agenci      | Código da agência.                        |
+| m_reg_trib      | Modalidade de registro tributário.        |
+| idctb           | ID do CTB (Controle de Contabilidade).    |
+| idctb_esto      | ID do CTB de estorno.                     |
+| spedreinf       | SPED do REINF (eSocial).                  |
+| valor           | Valor.                                    |
+| receita1        | Receita 1.                                |
+| receita2        | Receita 2.                                |
+| iss             | Valor do ISS.                             |
+| ir              | Valor do IR.                              |
+| total           | Valor total.                              |
+| terceiros       | Terceiros.                                |
+| pis             | Valor do PIS.                             |
+| cofins_ktl      | COFINS KTL.                               |
+
 
