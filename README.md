@@ -53,7 +53,7 @@ Esta tabela contém informações sobre clientes no contexto de publicidade, inc
 
 # Documentação da Tabela `dim_fornecedor_publi`
 
-Esta tabela contém informações sobre fornecedores no contexto de publicidade, incluindo detalhes como identificação, situação, nome, informações de contato e endereço.
+Esta tabela contém informações sobre fornecedores cadastrado no ERP publi
 
 | Coluna            | Descrição                              |
 |-------------------|----------------------------------------|
@@ -74,7 +74,7 @@ Esta tabela contém informações sobre fornecedores no contexto de publicidade,
 
 # Documentação da Tabela `dim_empresas_publi`
 
-Esta tabela contém informações sobre empresas públicas, incluindo detalhes como código, razão social, nome e número de inscrição.
+Esta tabela contém informações sobre empresas no ERP publi, incluindo detalhes como código, razão social, nome e número de inscrição.
 
 | Coluna       | Descrição                              |
 |--------------|----------------------------------------|
@@ -86,7 +86,7 @@ Esta tabela contém informações sobre empresas públicas, incluindo detalhes c
 
 # Documentação da Tabela `fato_pedidos_cap_publi`
 
-Esta tabela contém informações sobre contas a pagar do nosso erp publi
+Esta tabela contém informações sobre contas a pagar do nosso no ERP publi
 
 | Coluna          | Descrição                              |
 |-----------------|----------------------------------------|
@@ -271,7 +271,7 @@ Este documento descreve as informações relacionadas às contas a receber no co
 
 # Documentação da Tabela `fato_faturamento`
 
-Esta tabela armazena informações relacionadas ao faturamento, incluindo detalhes sobre faturas, situação, clientes, produtos, impostos e outras informações associadas.
+Esta tabela armazena informações relacionadas ao faturamentodo nosso ERP publi
 
 | Coluna          | Descrição                                  |
 |-----------------|--------------------------------------------|
@@ -378,7 +378,7 @@ Esta tabela armazena informações relacionadas ao faturamento, incluindo detalh
 
 # Documentação da Tabela `fato_orcamentos`
 
-Esta tabela armazena informações relacionadas aos orçamentos, incluindo detalhes sobre o cliente, produto, valor, data de emissão e outros.
+Esta tabela armazena informações relacionadas aos orçamentos do nosso ERP publi
 
 | Coluna        | Descrição                                    |
 |---------------|----------------------------------------------|
