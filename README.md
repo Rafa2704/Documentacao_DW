@@ -72,3 +72,16 @@ Esta tabela contém informações sobre fornecedores no contexto de publicidade,
 | cnpj_cpf          | CNPJ (Cadastro Nacional da Pessoa Jurídica) ou CPF (Cadastro de Pessoa Física) do fornecedor. |
 
 
+# Documentação da Tabela `dim_empresas_publi`
+
+Esta tabela contém informações sobre empresas públicas, incluindo detalhes como código, razão social, nome e número de inscrição.
+
+| Coluna       | Descrição                              |
+|--------------|----------------------------------------|
+| codigo       | Código único da empresa.               |
+| razao_soc    | Razão social da empresa.               |
+| nome         | Nome da empresa.                       |
+| inscricao    | Número de inscrição da empresa.        |
+
+
+
