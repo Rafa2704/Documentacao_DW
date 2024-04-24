@@ -84,4 +84,71 @@ Esta tabela contém informações sobre empresas públicas, incluindo detalhes c
 | inscricao    | Número de inscrição da empresa.        |
 
 
+# Documentação da Tabela `fato_pedidos_cap_publi`
+
+Esta tabela contém informações sobre contas a pagar do nosso erp publi
+
+| Coluna          | Descrição                              |
+|-----------------|----------------------------------------|
+| documento       | Documento relacionado ao pedido.       |
+| cod_fornec      | Código do fornecedor relacionado ao pedido. |
+| cod_client      | Código do cliente relacionado ao pedido. |
+| descricao       | Descrição do pedido.                   |
+| emissao         | Data de emissão do pedido.             |
+| entrada         | Data de entrada do pedido.             |
+| valor           | Valor do pedido.                       |
+| vencimento      | Data de vencimento do pedido.          |
+| banco           | Banco relacionado ao pagamento do pedido. |
+| tipo_pedid      | Tipo de pedido.                        |
+| datapagto       | Data de pagamento do pedido.           |
+| valorpagto      | Valor pago do pedido.                  |
+| contapagto      | Conta relacionada ao pagamento do pedido. |
+| ccm_baixa       | CCM de baixa do pedido.                |
+| chequepagt      | Cheque relacionado ao pagamento do pedido. |
+| ctb_apropr      | Conta de apropriação do pedido.        |
+| ctb_baixa       | Conta de baixa do pedido.              |
+| conf_aprop      | Confirmação de apropriação do pedido.  |
+| conf_baixa      | Confirmação de baixa do pedido.        |
+| tag             | Tag relacionada ao pedido.             |
+| opmanu          | Operação de manutenção do pedido.      |
+| dtmanu          | Data de manutenção do pedido.          |
+| usmanu          | Usuário responsável pela manutenção do pedido. |
+| tipo_doc        | Tipo de documento do pedido.           |
+| juros           | Juros do pedido.                       |
+| multa           | Multa do pedido.                       |
+| vencto_org      | Vencimento original do pedido.         |
+| fatura          | Fatura relacionada ao pedido.          |
+| chave_parc      | Chave da parcela do pedido.            |
+| bv_perc         | Percentual BV do pedido.               |
+| empresa         | Empresa relacionada ao pedido.         |
+| dtinclusao      | Data de inclusão do pedido no sistema. |
+| hrmanu          | Hora de manutenção do pedido.          |
+| valor_brut      | Valor bruto do pedido.                 |
+| lib_lote        | Lote de liberação do pedido.           |
+| lib_data        | Data de liberação do pedido.           |
+| lib_usuari      | Usuário responsável pela liberação do pedido. |
+| num_serie       | Número de série do pedido.             |
+| usinclusao      | Usuário responsável pela inclusão do pedido. |
+| situacao        | Situação do pedido.                    |
+| data_sit        | Data da situação do pedido.            |
+| cod_ir          | Código IR do pedido.                   |
+| recno           | Número de registro do pedido.          |
+| sit_descri      | Descrição da situação do pedido.       |
+| lote_data       | Data do lote do pedido.                |
+| lote_usuar      | Usuário responsável pelo lote do pedido. |
+| envbcodata      | Dados de envio do pedido.              |
+| tipo_despe      | Tipo de despesa do pedido.             |
+| idfat           | ID da fatura relacionada ao pedido.    |
+| spedfiscal      | Informações fiscais relacionadas ao pedido. |
+| dtexecucao      | Data de execução do pedido.            |
+| pag_e_lote      | Página e lote do pedido.               |
+| cod_agenci      | Código da agência do pedido.           |
+| part_scp        | Participante SCP do pedido.            |
+| hrinclusao      | Hora de inclusão do pedido.            |
+| documento_empresa | Documento da empresa relacionado ao pedido. |
+| pit             | PIT relacionado ao pedido.             |
+
+
+
+
 
