@@ -149,6 +149,80 @@ Esta tabela contém informações sobre contas a pagar do nosso erp publi
 | pit             | PIT relacionado ao pedido.             |
 
 
+# Documentação do Fluxo de Férias
+
+## Construção do Fluxo de Férias
+
+O fluxo de férias é construído utilizando dados de três APIs do Goepick: solicitar férias, aprovar férias e pedido de férias.
+
+### APIs do Goepick Utilizadas:
+
+1. **Solicitar Férias API:**
+   - Esta API é responsável por permitir que os usuários solicitem férias. Ela fornece informações detalhadas sobre as solicitações de férias, incluindo o ID do ticket, data de início e término das férias e status da solicitação.
+
+2. **Aprovar Férias API:**
+   - Esta API é utilizada para aprovar solicitações de férias. Fornece detalhes sobre as aprovações de férias, incluindo o ID do ticket a ser aprovado, datas de início e término da aprovação, o status do ticket e informações sobre o aprovador.
+
+3. **Pedido de Férias API:**
+   - Esta API lida com os pedidos de férias, incluindo informações sobre o ID do ticket, datas de início e término do pedido, status do ticket e valores associados ao pedido.
+
+## Construção do Fluxo:
+
+O fluxo de férias é construído em três etapas principais:
+
+1. **Scripts em Python:**
+   - São utilizados três scripts em Python para ler os dados das APIs do Goepick.
+   - Cada script lê os dados de uma API específica e salva os resultados em arquivos CSV na pasta designada.
+
+2. **Apache Hop ETL:**
+   - O Apache Hop é utilizado para realizar o ETL (Extração, Transformação e Carregamento) dos dados.
+   - Os dados salvos nos arquivos CSV são lidos pelo Apache Hop, onde são transformados e combinados com base no ID do ticket.
+   - Este processo de ETL permite a junção dos dados das três fontes API em um único conjunto de dados.
+
+3. **Armazenamento no Banco de Dados:**
+   - Após a transformação e combinação dos dados pelo Apache Hop, o resultado é gravado no banco de dados.
+   - Os dados combinados e processados agora estão prontos para análise e utilização posterior.
+
+## Exemplo de Uso:
+
+Para executar o fluxo de férias:
+
+1. Execute os scripts em Python para obter os dados das APIs do Goepick e salvá-los nos arquivos CSV.
+2. Utilize o Apache Hop para realizar o ETL dos dados, transformá-los e combiná-los conforme necessário.
+3. Grave os dados resultantes no banco de dados para análise e utilização.
+
+Este fluxo de trabalho permite a gestão eficiente das solicitações, aprovações e pedidos de férias, proporcionando uma visão abrangente do processo.
+
+---
+
+## Detalhes do Fluxo de Férias
+
+Este documento descreve o fluxo de férias em detalhes, incluindo informações sobre status, colunas associadas, tickets, aprovações, datas e usuários.
+
+| Coluna           | Descrição                                 |
+|------------------|-------------------------------------------|
+| status           | Status do fluxo de férias.                |
+| coluna1 - coluna12 | Descrições das colunas associadas ao fluxo de férias. |
+| ticket_id_aprovar | ID do ticket a ser aprovado.              |
+| inicio_aprovar   | Data de início da aprovação.              |
+| fim_aprovar      | Data de fim da aprovação.                 |
+| ticket_status_aprovar | Status do ticket a ser aprovado.       |
+| coluna1_aprovar  | Descrição da coluna associada à aprovação. |
+| coluna2_aprovar  | Descrição da coluna associada à aprovação. |
+| nome_aprovar     | Nome do aprovador.                        |
+| ticket_id        | ID do ticket.                             |
+| start_at         | Data/hora de início do fluxo de férias.  |
+| end_at           | Data/hora de término do fluxo de férias. |
+| ticket_status    | Status do ticket.                         |
+| device           | Dispositivo utilizado no fluxo de férias.|
+| user_name        | Nome do usuário associado ao fluxo de férias. |
+| ticket_id_pedido | ID do ticket de pedido.                   |
+| fim_pedido       | Data de término do pedido.                |
+| inicio_pedido    | Data de início do pedido.                 |
+| ticketd_status_pedido | Status do ticket de pedido.           |
+| values_pedido    | Valores associados ao pedido.            |
+| aprovador_dp     | Aprovador de departamento.               |
+
 
 
 
