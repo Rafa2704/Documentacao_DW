@@ -376,4 +376,27 @@ Esta tabela armazena informações relacionadas ao faturamento, incluindo detalh
 | pis             | Valor do PIS.                             |
 | cofins_ktl      | COFINS KTL.                               |
 
+# Documentação da Tabela `fato_orcamentos`
+
+Esta tabela armazena informações relacionadas aos orçamentos, incluindo detalhes sobre o cliente, produto, valor, data de emissão e outros.
+
+| Coluna        | Descrição                                    |
+|---------------|----------------------------------------------|
+| orcamento     | Número do orçamento.                         |
+| pit           | PIT (Período de Apuração e Pagamento).      |
+| tipo          | Tipo do orçamento.                           |
+| modelo        | Modelo do orçamento.                         |
+| cod_client    | Código do cliente associado ao orçamento.   |
+| produto       | Produto associado ao orçamento.             |
+| emissao       | Data de emissão do orçamento.               |
+| valor         | Valor do orçamento.                         |
+| descricao     | Descrição do orçamento.                     |
+| fatura        | Número da fatura associada ao orçamento.    |
+| situacao      | Situação do orçamento.                      |
+| data_aprov    | Data de aprovação do orçamento.             |
+| campanha      | Campanha relacionada ao orçamento.          |
+| empresa       | Empresa relacionada ao orçamento.           |
+| vencimento    | Data de vencimento do orçamento.            |
+| recno         | Número de registro do orçamento.            |
+| idfat         | ID da fatura associada ao orçamento.        |
 
