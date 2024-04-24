@@ -33,7 +33,7 @@ Esta tabela armazena informações sobre advertências, com detalhes sobre o in�
 
 # Documentação da Tabela `dim_clientes_publi`
 
-Esta tabela contém informações sobre clientes no contexto de publicidade, incluindo detalhes como identificação, situação, nome, informações de contato e endereço.
+Esta tabela contém informações sobre clientes do nosso ERP publi
 
 | Coluna        | Descrição                              |
 |---------------|----------------------------------------|
