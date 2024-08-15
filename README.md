@@ -459,3 +459,20 @@ A tabela é construída a partir de múltiplas fontes, incluindo:
 
 ## Uso
 Essa tabela é essencial para conseguir cruzar dados de pêndencias de apontamentos com o dash de advêrtencias.
+
+# Documentação da Tabela `dim_nucleo`
+
+Esta tabela armazena informações sobre as unidades de negócio, incluindo detalhes como a empresa associada, o nome da unidade, códigos externos, usuários responsáveis e percentuais de rateio.
+
+## Colunas da Tabela
+| Coluna                | Descrição                                                      |
+|-----------------------|----------------------------------------------------------------|
+| unidade_negocio_id    | Identificador único da unidade de negócio.                     |
+| empresa_id            | Identificador da empresa associada à unidade de negócio.       |
+| nome                  | Nome da unidade de negócio.                                    |
+| cod_ext_unid_neg      | Código externo da unidade de negócio.                          |
+| usuario_id            | Identificador do usuário responsável pela unidade.             |
+| perc_rateio           | Percentual de rateio associado à unidade de negócio.           |
+
+## Uso
+A tabela `dim_nucleo` é utilizada para gerenciar e analisar as diferentes unidades de negócio, facilitando a organização e o cálculo de rateios com base nas informações associadas.
