@@ -400,3 +400,62 @@ Esta tabela armazena informações relacionadas aos orçamentos do nosso ERP pub
 | recno         | Número de registro do orçamento.            |
 | idfat         | ID da fatura associada ao orçamento.        |
 
+
+
+# Documentação da Tabela `fato_jobone_pendencia`
+
+Esta tabela armazena informações relacionadas às pendências de atividades de alocação e apontamento de horas, considerando a estrutura organizacional e feriados. A `fato_jobone_pendencia` é essencial para análises detalhadas de pendências operacionais, permitindo a identificação de inconsistências e problemas relacionados à alocação de recursos e cumprimento de prazos.
+
+## Fonte de Dados
+A tabela é construída a partir de múltiplas fontes, incluindo:
+- **APONTAM_DATA**
+- **USUARIO**
+- **EQUIPE_USUARIO**
+- **AREA**
+- **CARGO**
+- **DIA_ALOCACAO**
+- **TAB_FERIADO**
+- **PESSOA**
+
+## Joins Principais
+- **APONTAM_DATA** com **USUARIO** e **EQUIPE_USUARIO** para associar dados de apontamento aos usuários e equipes.
+- **AREA** e **CARGO** para relacionar cargos com suas respectivas áreas.
+- **DIA_ALOCACAO** e **TAB_FERIADO** para identificar alocações em dias de feriado.
+- Join final com **PESSOA** para integrar todas as informações relevantes na tabela final.
+
+## Colunas da Tabela
+| Coluna                 | Descrição                                                         |
+|------------------------|-------------------------------------------------------------------|
+| apontam_data_id        | Identificador da data de apontamento.                             |
+| usuario_id             | Identificador do usuário.                                         |
+| usuario_aprov_id       | Identificador do usuário que aprovou.                             |
+| cargo_id               | Identificador do cargo.                                           |
+| area_cargo_id          | Identificador da área do cargo.                                   |
+| DATA                   | Data relacionada ao registro.                                     |
+| num_horas_dia          | Número de horas alocadas no dia.                                  |
+| status                 | Status da pendência.                                              |
+| nivel                  | Nível da pendência.                                               |
+| data_apont             | Data do apontamento.                                              |
+| data_aprov             | Data da aprovação.                                                |
+| tab_feriado_id         | Identificador da tabela de feriados.                              |
+| LOGIN                  | Login do usuário.                                                 |
+| flag_ativo             | Indicador se o registro está ativo.                               |
+| tipo_relacao           | Tipo de relação do usuário com a organização.                     |
+| equipe_id              | Identificador da equipe.                                          |
+| area                   | Área do usuário.                                                  |
+| area_id                | Identificador da área.                                            |
+| empresa_id             | Identificador da empresa.                                         |
+| cargo                  | Cargo do usuário.                                                 |
+| chave_dia_alocacao     | Chave única de alocação do dia.                                   |
+| dia_alocacao_id        | Identificador do dia de alocação.                                 |
+| data_1                 | Data adicional relacionada ao registro.                           |
+| horas_diarias          | Horas diárias alocadas.                                           |
+| dia_semana             | Dia da semana.                                                    |
+| feriado                | Indicador se o dia é feriado.                                     |
+| flag_padrao            | Indicador de padrão.                                              |
+| email                  | E-mail do usuário.                                                |
+| pessoa_id              | Identificador da pessoa.                                          |
+| flag_atiivo_pessoa     | Indicador se a pessoa está ativa.                                 |
+
+## Uso
+Essa tabela é essencial para conseguir cruzar dados de pêndencias de apontamentos com o dash de advêrtencias.
