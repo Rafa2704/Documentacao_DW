@@ -682,3 +682,54 @@ A tabela `fato_rateio_gipview` é utilizada principalmente para:
 
 ## Observações Adicionais
 - A tabela é projetada para suportar análises detalhadas da alocação de recursos, ajudando a identificar áreas que necessitem de ajuste ou realocação de pessoal para otimização das operações.
+
+
+# Documentação da Tabela: `fato_op`
+
+## Descrição
+A tabela `fato_op` armazena informações detalhadas sobre as oportunidades de negócios geradas no sistema JobOne a partir de 1º de janeiro de 2023. Esta tabela é essencial para o rastreamento das oportunidades desde a sua criação até o fechamento, permitindo a análise de desempenho, status, e probabilidade de sucesso das oportunidades de vendas.
+
+## Estrutura da Tabela
+
+| Nome da Coluna         | Tipo de Dados | Descrição                                                                                  |
+|------------------------|---------------|--------------------------------------------------------------------------------------------|
+| `oportunidade_id`      | INTEGER       | Identificador único da oportunidade no sistema.                                            |
+| `empresa_id`           | INTEGER       | Identificador da empresa associada à oportunidade.                                         |
+| `cliente_id`           | INTEGER       | Identificador do cliente relacionado à oportunidade.                                       |
+| `cenario_escolhido_id` | INTEGER       | Identificador do cenário escolhido para a oportunidade.                                    |
+| `numero`               | VARCHAR       | Número identificador da oportunidade.                                                      |
+| `nome`                 | VARCHAR       | Nome da oportunidade ou descrição breve.                                                   |
+| `data_entrada`         | DATE          | Data de entrada da oportunidade no sistema.                                                |
+| `origem`               | VARCHAR       | Origem da oportunidade (ex: indicação, marketing, cold call).                              |
+| `tipo_negocio`         | VARCHAR       | Tipo de negócio relacionado à oportunidade (ex: nova venda, upsell, renovação).            |
+| `flag_conflito`        | BOOLEAN       | Indica se a oportunidade possui algum tipo de conflito (ex: conflito de interesse).         |
+| `status`               | VARCHAR       | Status atual da oportunidade (ex: em andamento, concluída, perdida).                       |
+| `data_status`          | DATE          | Data da última atualização do status da oportunidade.                                      |
+| `tipo_conc`            | VARCHAR       | Tipo de concorrência envolvida na oportunidade (ex: direta, indireta).                     |
+| `perda_para`           | VARCHAR       | Identificação do concorrente para o qual a oportunidade foi perdida, se aplicável.         |
+| `motivo_status`        | VARCHAR       | Motivo associado ao status atual da oportunidade (ex: motivo de perda).                    |
+| `valor_oportun`        | DECIMAL       | Valor financeiro estimado da oportunidade.                                                 |
+| `perc_prob_fech`       | DECIMAL       | Percentual de probabilidade de fechamento da oportunidade.                                 |
+| `data_prov_fech`       | DATE          | Data prevista para o fechamento da oportunidade.                                           |
+| `data_prox_int`        | DATE          | Data da próxima interação ou contato relacionado à oportunidade.                           |
+| `tipo_contrato_id`     | INTEGER       | Identificador do tipo de contrato associado à oportunidade.                                |
+| `usuario_resp_id`      | INTEGER       | Identificador do usuário responsável pela oportunidade.                                    |
+| `unid_negocio_resp_id` | INTEGER       | Identificador da unidade de negócio responsável pela oportunidade.                         |
+
+## Relacionamentos
+- **`oportunidade_id`**: Chave primária que identifica de forma única cada oportunidade dentro da tabela.
+- A tabela pode ser referenciada por outras tabelas e relatórios para analisar o desempenho das oportunidades de vendas, o status, e a evolução ao longo do tempo.
+
+## Exemplos de Uso
+A tabela `fato_op` é utilizada principalmente para:
+- Monitorar o pipeline de vendas e o status das oportunidades em aberto.
+- Analisar as razões de perda ou ganho de oportunidades, permitindo ajustes nas estratégias comerciais.
+- Gerar relatórios gerenciais sobre o desempenho de vendas, previsão de receita, e eficácia das equipes de vendas.
+
+## Considerações
+- A coluna `valor_oportun` deve ser validada para garantir a precisão dos relatórios financeiros e previsões de receita.
+- Os campos `data_status`, `data_prov_fech`, e `data_prox_int` são cruciais para o gerenciamento do tempo e o acompanhamento das interações com o cliente.
+
+## Observações Adicionais
+- A tabela é otimizada para suportar consultas complexas e relatórios detalhados, ajudando na análise do ciclo de vida das oportunidades desde a sua criação até o fechamento ou perda.
+
