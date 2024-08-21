@@ -733,3 +733,47 @@ A tabela `fato_op` é utilizada principalmente para:
 ## Observações Adicionais
 - A tabela é otimizada para suportar consultas complexas e relatórios detalhados, ajudando na análise do ciclo de vida das oportunidades desde a sua criação até o fechamento ou perda.
 
+
+# Documentação da Tabela: `historico_status_op`
+
+## Descrição
+A tabela `historico_status_op` armazena o histórico das mudanças de status das oportunidades registradas na tabela `fato_op`. Esta tabela é alimentada por uma trigger que captura qualquer alteração no status das oportunidades, registrando o início e o fim de cada status, bem como o responsável pela alteração e a unidade de negócio associada.
+
+## Estrutura da Tabela
+
+| Nome da Coluna         | Tipo de Dados | Descrição                                                                                  |
+|------------------------|---------------|--------------------------------------------------------------------------------------------|
+| `historico_id`         | SERIAL        | Identificador único do registro no histórico.                                              |
+| `oportunidade_id`      | INTEGER       | Identificador da oportunidade cuja mudança de status está sendo registrada.                |
+| `status`               | VARCHAR       | Status da oportunidade no momento da alteração.                                            |
+| `data_inicio`          | TIMESTAMP     | Data e hora em que o status foi definido.                                                  |
+| `data_fim`             | TIMESTAMP     | Data e hora em que o status foi alterado para um novo valor.                               |
+| `usuario_resp_id`      | INTEGER       | Identificador do usuário responsável pela alteração do status.                             |
+| `unid_negocio_resp_id` | INTEGER       | Identificador da unidade de negócio responsável pela oportunidade no momento da alteração. |
+
+## Funcionamento da Trigger
+
+### Trigger: `trigger_update_status_history`
+
+- **Objetivo:** A trigger `trigger_update_status_history` é acionada após qualquer atualização na coluna `status` da tabela `fato_op`. 
+- **Ação:** Quando o status de uma oportunidade é alterado:
+  1. Um novo registro é inserido na tabela `historico_status_op`, contendo o `oportunidade_id`, o novo `status`, a `data_status` como `data_inicio`, o `usuario_resp_id`, e o `unid_negocio_resp_id`.
+  2. O registro anterior para a mesma `oportunidade_id`, onde o `status` era diferente e a `data_fim` está em aberto (`NULL`), é atualizado com a `data_status` da nova alteração, encerrando o período daquele status.
+
+### Função: `update_status_history()`
+- **Função:** A função `update_status_history()` é responsável por executar a lógica descrita acima:
+  1. Insere um novo registro no `historico_status_op`.
+  2. Atualiza o registro anterior do mesmo `oportunidade_id` para definir a `data_fim` com a data do novo status.
+
+## Exemplos de Uso
+A tabela `historico_status_op` é utilizada para:
+- Rastrear todas as mudanças de status das oportunidades ao longo do tempo.
+- Fornecer uma visão detalhada da evolução das oportunidades, permitindo análise de duração de cada estágio.
+- Auditar o processo de vendas e identificar pontos de ineficiência ou gargalos, analisando o tempo gasto em cada status.
+
+## Considerações
+- A coluna `data_fim` é atualizada pela trigger somente quando ocorre uma nova alteração de status. Portanto, registros com `data_fim` igual a `NULL` indicam que a oportunidade está atualmente naquele status.
+- A precisão das datas e a consistência dos registros dependem da correta configuração da trigger e da função associada.
+
+## Observações Adicionais
+- A tabela `historico_status_op` é essencial para auditorias e relatórios de performance das equipes de vendas, permitindo uma análise profunda do ciclo de vida das oportunidades.
