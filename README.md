@@ -558,4 +558,42 @@ A tabela `fato_cadastro_pedido_goepick` é utilizada principalmente para:
 ## Observações Adicionais
 - A tabela é otimizada para consultas e relatórios gerenciais, facilitando o acompanhamento dos pedidos e a análise do fluxo de trabalho relacionado ao cadastro de pedidos.
 
+# Documentação da Tabela: `fato_pedidos_cancelados`
+
+## Descrição
+A tabela `fato_pedidos_cancelados` armazena informações detalhadas sobre os pedidos de fornecedores que foram cancelados dentro do sistema Goepick. Esta tabela permite o rastreamento dos motivos de cancelamento, o status do workflow associado, e as atividades realizadas até o cancelamento.
+
+## Estrutura da Tabela
+
+| Nome da Coluna     | Tipo de Dados | Descrição                                                                                  |
+|--------------------|---------------|--------------------------------------------------------------------------------------------|
+| `ticket_id`        | INTEGER       | Identificador único do ticket relacionado ao pedido cancelado.                             |
+| `workflow_name`    | VARCHAR       | Nome do workflow associado ao pedido cancelado.                                            |
+| `workflow_version` | VARCHAR       | Versão do workflow utilizado no processo de cancelamento.                                  |
+| `schedule_title`   | VARCHAR       | Título do agendamento ou processo específico dentro do workflow relacionado ao cancelamento.|
+| `activity_id`      | INTEGER       | Identificador da atividade específica dentro do workflow até o cancelamento.               |
+| `start_at`         | TIMESTAMP     | Data e hora de início da atividade que resultou no cancelamento.                           |
+| `end_at`           | TIMESTAMP     | Data e hora de término da atividade que resultou no cancelamento.                          |
+| `status`           | VARCHAR       | Status atual da atividade de cancelamento (ex: em andamento, concluída, falhou).           |
+| `ticket_status`    | VARCHAR       | Status geral do ticket (ex: cancelado, pendente).                                          |
+| `device`           | VARCHAR       | Dispositivo utilizado para realizar a atividade de cancelamento.                           |
+| `"values"`         | JSON          | Valores específicos relacionados ao cancelamento do pedido, armazenados em formato JSON.   |
+| `user_name`        | VARCHAR       | Nome do usuário responsável pela execução da atividade de cancelamento.                    |
+
+## Relacionamentos
+- **`ticket_id`**: Chave primária que identifica de forma única cada registro dentro da tabela.
+- A tabela pode ser referenciada por outras tabelas para auditorias e análises do motivo de cancelamento de pedidos.
+
+## Exemplos de Uso
+A tabela `fato_pedidos_cancelados` é utilizada principalmente para:
+- Rastrear os motivos e processos que levaram ao cancelamento de pedidos de fornecedores.
+- Auditar as atividades relacionadas ao cancelamento de pedidos para garantir conformidade.
+- Gerar relatórios de análise sobre os cancelamentos, permitindo a identificação de padrões ou problemas recorrentes.
+
+## Considerações
+- A coluna `"values"` armazena dados em formato JSON, que podem variar conforme o workflow e as características específicas de cada pedido cancelado. É essencial validar esses dados para manter a consistência e integridade das informações.
+
+## Observações Adicionais
+- A tabela é otimizada para consultas e relatórios gerenciais, proporcionando uma visão detalhada do fluxo de trabalho até o cancelamento e ajudando a identificar áreas para melhorias no processo.
+
 
