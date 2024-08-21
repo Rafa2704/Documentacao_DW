@@ -644,3 +644,41 @@ A tabela `fato_requisicao_solicitacao` é utilizada principalmente para:
 ## Observações Adicionais
 - A tabela é estruturada para suportar consultas complexas e relatórios detalhados, fornecendo uma visão abrangente das solicitações e permitindo a identificação de padrões ou áreas que necessitem de melhorias no processo de requisição.
 
+
+# Documentação da Tabela: `fato_rateio_gipview`
+
+## Descrição
+A tabela `fato_rateio_gipview` é originada do sistema Gipview e é utilizada para determinar a porcentagem de alocação de recursos por agência e núcleos. Essa tabela é fundamental para o rastreamento e análise da distribuição de colaboradores e suas respectivas alocações dentro da empresa.
+
+## Estrutura da Tabela
+
+| Nome da Coluna            | Tipo de Dados | Descrição                                                                                  |
+|---------------------------|---------------|--------------------------------------------------------------------------------------------|
+| `nome`                    | VARCHAR       | Nome completo do colaborador alocado.                                                      |
+| `cpf`                     | VARCHAR       | CPF do colaborador alocado.                                                                |
+| `empresa`                 | VARCHAR       | Nome da empresa à qual o colaborador está vinculado.                                       |
+| `cod_nucleo`              | VARCHAR       | Código do núcleo ao qual o colaborador está alocado.                                        |
+| `nucleo`                  | VARCHAR       | Nome do núcleo ao qual o colaborador está alocado.                                         |
+| `percentual`              | DECIMAL       | Percentual de alocação do colaborador no núcleo específico.                                |
+| `email`                   | VARCHAR       | E-mail do colaborador alocado.                                                             |
+| `relacao`                 | VARCHAR       | Relação do colaborador com a empresa (ex: CLT, PJ, estagiário).                            |
+| `origem`                  | VARCHAR       | Origem das informações sobre a alocação do colaborador.                                    |
+| `data_hora_sincronizacao` | TIMESTAMP     | Data e hora da última sincronização dos dados com o sistema Gipview.                       |
+| `data_exportacao_select`  | TIMESTAMP     | Data e hora da exportação dos dados para o banco de dados atual.                           |
+
+## Relacionamentos
+- **`cpf`**: Chave primária que identifica de forma única cada colaborador dentro da tabela.
+- A tabela pode ser referenciada por outras tabelas e relatórios para obter informações detalhadas sobre as alocações de recursos, facilitando a análise da distribuição por núcleos e agências.
+
+## Exemplos de Uso
+A tabela `fato_rateio_gipview` é utilizada principalmente para:
+- Monitorar e analisar a distribuição de colaboradores por agências e núcleos, de acordo com a porcentagem de alocação.
+- Gerar relatórios gerenciais que ajudam a entender a alocação de recursos e a eficiência operacional dos núcleos e agências.
+- Verificar a conformidade das alocações em relação às metas e planos de alocação de recursos da empresa.
+
+## Considerações
+- A coluna `percentual` deve ser validada para garantir que os valores de alocação estejam corretos e somem 100% para cada colaborador onde aplicável.
+- Os dados de sincronização e exportação (`data_hora_sincronizacao`, `data_exportacao_select`) são cruciais para garantir que os relatórios e análises estejam baseados nas informações mais recentes.
+
+## Observações Adicionais
+- A tabela é projetada para suportar análises detalhadas da alocação de recursos, ajudando a identificar áreas que necessitem de ajuste ou realocação de pessoal para otimização das operações.
