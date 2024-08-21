@@ -516,5 +516,46 @@ A tabela `fato_aprovacao_contratacao_goepick` é utilizada principalmente para:
 ## Observações Adicionais
 - A tabela é otimizada para consultas de auditoria e relatórios gerenciais, permitindo uma visão detalhada do processo de contratação desde a criação até a conclusão.
 
+# Documentação da Tabela: `fato_cadastro_pedido_goepick`
+
+## Descrição
+A tabela `fato_cadastro_pedido_goepick` armazena os dados referentes ao cadastro de pedidos realizados por fornecedores no sistema Goepick. Esta tabela é essencial para o rastreamento dos pedidos desde a sua criação até a aprovação, permitindo o acompanhamento do fluxo de trabalho e das atividades relacionadas.
+
+## Estrutura da Tabela
+
+| Nome da Coluna     | Tipo de Dados | Descrição                                                                                  |
+|--------------------|---------------|--------------------------------------------------------------------------------------------|
+| `ticket_id`        | INTEGER       | Identificador único do ticket relacionado ao pedido.                                       |
+| `comentarios`      | TEXT          | Comentários adicionais fornecidos pelo requisitante ou pelo sistema durante o cadastro.    |
+| `codigo_fornecedor`| VARCHAR       | Código único que identifica o fornecedor responsável pelo pedido.                          |
+| `nome_requisitante`| VARCHAR       | Nome do requisitante que realizou o pedido.                                                |
+| `numero_pedido`    | VARCHAR       | Número de identificação do pedido no sistema.                                              |
+| `workflow_name`    | VARCHAR       | Nome do workflow associado ao cadastro do pedido.                                          |
+| `workflow_version` | VARCHAR       | Versão do workflow utilizado para o cadastro do pedido.                                    |
+| `schedule_title`   | VARCHAR       | Título do agendamento ou processo específico dentro do workflow relacionado ao pedido.     |
+| `activity_id`      | INTEGER       | Identificador da atividade específica dentro do workflow.                                  |
+| `start_at`         | TIMESTAMP     | Data e hora de início da atividade de cadastro do pedido.                                  |
+| `end_at`           | TIMESTAMP     | Data e hora de término da atividade de cadastro do pedido.                                 |
+| `status`           | VARCHAR       | Status atual da atividade de cadastro (ex: em andamento, concluída, falhou).               |
+| `ticket_status`    | VARCHAR       | Status geral do ticket (ex: aberto, fechado, cancelado).                                   |
+| `device`           | VARCHAR       | Dispositivo utilizado para realizar a atividade de cadastro.                               |
+| `"values"`         | JSON          | Valores específicos relacionados ao pedido, armazenados em formato JSON.                   |
+| `user_name`        | VARCHAR       | Nome do usuário responsável pela execução da atividade de cadastro.                        |
+
+## Relacionamentos
+- **`ticket_id`**: Chave primária que identifica de forma única cada registro dentro da tabela.
+- A tabela pode ser referenciada por outras tabelas para acompanhar o histórico e as alterações realizadas durante o cadastro do pedido.
+
+## Exemplos de Uso
+A tabela `fato_cadastro_pedido_goepick` é utilizada principalmente para:
+- Rastrear a criação e cadastro de pedidos de fornecedores.
+- Auditar o processo de cadastro para garantir conformidade e consistência.
+- Gerar relatórios sobre o status e desempenho dos pedidos cadastrados no sistema.
+
+## Considerações
+- A coluna `"values"` armazena dados em formato JSON, que podem variar conforme o workflow e as características específicas de cada pedido. É importante validar esses dados para manter a consistência e integridade das informações.
+
+## Observações Adicionais
+- A tabela é otimizada para consultas e relatórios gerenciais, facilitando o acompanhamento dos pedidos e a análise do fluxo de trabalho relacionado ao cadastro de pedidos.
 
 
