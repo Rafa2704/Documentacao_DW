@@ -476,3 +476,45 @@ Esta tabela armazena informações sobre as unidades de negócio, incluindo deta
 
 ## Uso
 A tabela `dim_nucleo` é utilizada para gerenciar e analisar as diferentes unidades de negócio, facilitando a organização e o cálculo de rateios com base nas informações associadas.
+
+
+# Documentação da Tabela: `fato_aprovacao_contratacao_goepick`
+
+## Descrição
+A tabela `fato_aprovacao_contratacao_goepick` armazena informações detalhadas sobre os processos de aprovação e contratação de pedidos de fornecedores dentro do sistema Goepick. Essa tabela é parte essencial do workflow de aprovação de contratos e gerenciamento de pedidos, permitindo o rastreamento das atividades realizadas, os responsáveis por cada etapa, e o status do processo.
+
+## Estrutura da Tabela
+
+| Nome da Coluna     | Tipo de Dados | Descrição                                                                                  |
+|--------------------|---------------|--------------------------------------------------------------------------------------------|
+| `ticket_id`        | INTEGER       | Identificador único do ticket.                                                             |
+| `workflow_name`    | VARCHAR       | Nome do workflow associado ao ticket.                                                      |
+| `workflow_version` | VARCHAR       | Versão do workflow utilizado no processo.                                                  |
+| `schedule_title`   | VARCHAR       | Título do agendamento ou processo específico dentro do workflow.                           |
+| `activity_id`      | INTEGER       | Identificador da atividade específica dentro do workflow.                                  |
+| `start_at`         | TIMESTAMP     | Data e hora de início da atividade.                                                        |
+| `end_at`           | TIMESTAMP     | Data e hora de término da atividade.                                                       |
+| `status`           | VARCHAR       | Status atual da atividade (ex: em andamento, concluída, falhou).                           |
+| `ticket_status`    | VARCHAR       | Status geral do ticket (ex: aberto, fechado, cancelado).                                   |
+| `device`           | VARCHAR       | Dispositivo utilizado para realizar a atividade.                                           |
+| `"values"`         | JSON          | Valores específicos relacionados à atividade ou ao ticket, armazenados em formato JSON.    |
+| `user_name`        | VARCHAR       | Nome do usuário responsável pela execução da atividade ou aprovação.                       |
+
+## Relacionamentos
+- **`ticket_id`**: Chave primária que identifica de forma única cada registro dentro da tabela.
+- A tabela pode ser referenciada por outras tabelas para rastrear o progresso dos tickets e atividades associadas dentro do workflow de aprovação e contratação.
+
+## Exemplos de Uso
+A tabela `fato_aprovacao_contratacao_goepick` é utilizada principalmente para:
+- Monitorar o progresso das aprovações e contratações de fornecedores.
+- Auditar as atividades realizadas no processo de contratação.
+- Gerar relatórios de status e desempenho dos processos de aprovação.
+
+## Considerações
+- A coluna `"values"` armazena dados em formato JSON, que podem variar conforme a necessidade do workflow e da atividade específica. É importante garantir a consistência desses dados conforme a versão do workflow.
+
+## Observações Adicionais
+- A tabela é otimizada para consultas de auditoria e relatórios gerenciais, permitindo uma visão detalhada do processo de contratação desde a criação até a conclusão.
+
+
+
