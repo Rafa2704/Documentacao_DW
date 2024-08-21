@@ -597,3 +597,50 @@ A tabela `fato_pedidos_cancelados` é utilizada principalmente para:
 - A tabela é otimizada para consultas e relatórios gerenciais, proporcionando uma visão detalhada do fluxo de trabalho até o cancelamento e ajudando a identificar áreas para melhorias no processo.
 
 
+# Documentação da Tabela: `fato_requisicao_solicitacao`
+
+## Descrição
+A tabela `fato_requisicao_solicitacao` armazena informações detalhadas sobre as requisições e solicitações realizadas no sistema Goepick. Essa tabela abrange desde a descrição do pedido até os detalhes financeiros e logísticos, permitindo o acompanhamento completo das solicitações desde a criação até o seu fechamento.
+
+## Estrutura da Tabela
+
+| Nome da Coluna                | Tipo de Dados | Descrição                                                                                  |
+|-------------------------------|---------------|--------------------------------------------------------------------------------------------|
+| `ticket_id`                   | INTEGER       | Identificador único do ticket relacionado à requisição ou solicitação.                     |
+| `descricao`                   | TEXT          | Descrição detalhada da solicitação ou requisição.                                          |
+| `centro_custo`                | VARCHAR       | Código ou identificador do centro de custo associado à requisição.                         |
+| `data_inicio`                 | DATE          | Data de início da solicitação ou requisição.                                               |
+| `data_termino`                | DATE          | Data de término da solicitação ou requisição.                                              |
+| `email_requisitante`          | VARCHAR       | E-mail do requisitante que realizou a solicitação.                                         |
+| `empresa`                     | VARCHAR       | Nome da empresa relacionada à solicitação ou requisição.                                   |
+| `"op/ct"`                     | VARCHAR       | Código de operação ou contrato relacionado à solicitação.                                  |
+| `condicao_pagamento`          | VARCHAR       | Condição de pagamento acordada para a solicitação ou requisição.                           |
+| `projeto`                     | VARCHAR       | Identificação do projeto ao qual a solicitação está vinculada.                             |
+| `nome_projeto`                | VARCHAR       | Nome do projeto relacionado à solicitação.                                                 |
+| `nucleo`                      | VARCHAR       | Núcleo responsável pela solicitação ou requisição.                                         |
+| `tipo_contratacao_produto`    | VARCHAR       | Tipo de contratação ou produto envolvido na solicitação.                                   |
+| `tipo_contratacao`            | VARCHAR       | Especificação do tipo de contratação realizada.                                            |
+| `valor`                       | DECIMAL       | Valor total da solicitação ou requisição.                                                  |
+| `valor_unitario`              | DECIMAL       | Valor unitário dos produtos ou serviços solicitados.                                       |
+| `valor_influenciador`         | DECIMAL       | Valor relacionado ao influenciador, se aplicável.                                          |
+| `user_name`                   | VARCHAR       | Nome do usuário responsável pela criação da solicitação ou requisição.                     |
+| `razao_nome`                  | VARCHAR       | Razão social ou nome completo da entidade ou indivíduo relacionado à solicitação.          |
+| `"Produto / Serviço"`         | VARCHAR       | Descrição do produto ou serviço solicitado.                                                |
+
+## Relacionamentos
+- **`ticket_id`**: Chave primária que identifica de forma única cada registro dentro da tabela.
+- A tabela pode ser referenciada por outras tabelas e relatórios para obter informações detalhadas sobre as requisições e solicitações, incluindo aspectos financeiros e operacionais.
+
+## Exemplos de Uso
+A tabela `fato_requisicao_solicitacao` é utilizada principalmente para:
+- Rastrear todas as solicitações e requisições realizadas dentro do sistema.
+- Monitorar o desempenho e a conformidade das requisições em relação aos centros de custo e condições de pagamento.
+- Gerar relatórios financeiros e operacionais detalhados sobre as solicitações realizadas.
+
+## Considerações
+- A tabela contém campos que capturam tanto informações financeiras quanto operacionais, sendo essencial para o acompanhamento completo do ciclo de vida das requisições.
+- Os campos `valor`, `valor_unitario`, e `valor_influenciador` devem ser validados para garantir a precisão dos relatórios financeiros.
+
+## Observações Adicionais
+- A tabela é estruturada para suportar consultas complexas e relatórios detalhados, fornecendo uma visão abrangente das solicitações e permitindo a identificação de padrões ou áreas que necessitem de melhorias no processo de requisição.
+
