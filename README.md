@@ -777,3 +777,52 @@ A tabela `historico_status_op` é utilizada para:
 
 ## Observações Adicionais
 - A tabela `historico_status_op` é essencial para auditorias e relatórios de performance das equipes de vendas, permitindo uma análise profunda do ciclo de vida das oportunidades.
+
+# Documentação da Tabela: `fato_horas_jobone`
+
+## Descrição
+A tabela `fato_horas_jobone` armazena dados detalhados sobre as horas trabalhadas pelos colaboradores, integrando informações das tabelas de `apontam_data`, `apontam_hora`, e `tipo_apontam` do sistema JobOne. Esta tabela é utilizada para monitorar e analisar o tempo dedicado a diferentes tarefas, projetos, e clientes, facilitando o controle de produtividade e alocação de recursos.
+
+## Estrutura da Tabela
+
+| Nome da Coluna         | Tipo de Dados | Descrição                                                                                  |
+|------------------------|---------------|--------------------------------------------------------------------------------------------|
+| `apontam_hora_id`      | INTEGER       | Identificador único da entrada de hora apontada.                                           |
+| `apontam_data_id`      | INTEGER       | Identificador da data associada ao apontamento de horas.                                   |
+| `tipo_apontam_id`      | INTEGER       | Identificador do tipo de apontamento (ex: horas extras, horas normais).                    |
+| `job_id`               | INTEGER       | Identificador do job ou projeto relacionado ao apontamento de horas.                       |
+| `cliente_id`           | INTEGER       | Identificador do cliente para o qual o job foi realizado.                                  |
+| `papel_id`             | INTEGER       | Identificador do papel ou função desempenhada pelo colaborador.                            |
+| `tarefa_id`            | INTEGER       | Identificador da tarefa específica associada ao apontamento de horas.                      |
+| `horas`                | DECIMAL       | Quantidade de horas trabalhadas apontadas.                                                 |
+| `obs`                  | TEXT          | Observações adicionais sobre o apontamento de horas.                                       |
+| `status`               | VARCHAR       | Status do apontamento (ex: aprovado, pendente, rejeitado).                                 |
+| `oportunidade_id`      | INTEGER       | Identificador da oportunidade relacionada ao job.                                          |
+| `unid_neg_cli_id`      | INTEGER       | Identificador da unidade de negócio do cliente.                                            |
+| `unid_neg_job_id`      | INTEGER       | Identificador da unidade de negócio do job.                                                |
+| `unid_neg_usu_id`      | INTEGER       | Identificador da unidade de negócio do usuário (colaborador).                              |
+| `contrato_id`          | INTEGER       | Identificador do contrato relacionado ao job ou oportunidade.                              |
+| `usuario_id`           | INTEGER       | Identificador do usuário (colaborador) que realizou o apontamento de horas.                |
+| `cargo_id`             | INTEGER       | Identificador do cargo do colaborador no momento do apontamento.                           |
+| `"DATA"`               | DATE          | Data do apontamento de horas.                                                              |
+| `codigo`               | VARCHAR       | Código associado ao apontamento, para referência interna ou relatórios.                    |
+| `nome`                 | VARCHAR       | Nome do colaborador que realizou o apontamento.                                            |
+| `flag_ativo`           | BOOLEAN       | Indica se o colaborador estava ativo no momento do apontamento de horas.                   |
+
+## Relacionamentos
+- **`apontam_hora_id`**: Chave primária que identifica de forma única cada entrada de hora apontada.
+- A tabela pode ser referenciada para gerar relatórios detalhados sobre as horas trabalhadas, distribuídas por clientes, projetos, unidades de negócio e colaboradores.
+
+## Exemplos de Uso
+A tabela `fato_horas_jobone` é utilizada principalmente para:
+- Monitorar o tempo gasto pelos colaboradores em diferentes projetos e tarefas.
+- Analisar a eficiência e produtividade das equipes, bem como a utilização de recursos.
+- Gerar relatórios financeiros sobre a alocação de horas trabalhadas para faturamento e controle de contratos.
+
+## Considerações
+- A coluna `horas` deve ser validada para garantir a precisão no cálculo do tempo trabalhado e evitar discrepâncias nos relatórios financeiros.
+- O campo `status` é essencial para a aprovação e controle das horas apontadas, permitindo a gestão do fluxo de aprovação.
+
+## Observações Adicionais
+- A tabela é fundamental para a análise operacional e financeira dos projetos, permitindo uma visão detalhada do esforço dedicado a cada tarefa e cliente. Ela suporta consultas complexas para otimizar a gestão de recursos humanos e operacionais.
+
